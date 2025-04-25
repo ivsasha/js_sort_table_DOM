@@ -11,6 +11,10 @@ headers.forEach((header) => {
       const aText = a.querySelectorAll('td')[index].textContent;
       const bText = b.querySelectorAll('td')[index].textContent;
 
+      if (!isNaN(Number(aText)) && !isNaN(Number(bText))) {
+        return parseFloat(aText) - parseFloat(bText);
+      }
+
       return aText.localeCompare(bText);
     });
     const tbody = table.querySelector('tbody');
